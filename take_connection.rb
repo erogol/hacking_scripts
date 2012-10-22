@@ -18,7 +18,7 @@ puts "#{target}"
 
 # Get the mac address of the ip selected 
 mac = %x(arping #{target} -c 1 | grep -G -o '..:..:..:..:..:..')
-
+puts "mac address: #{mac}"
 system("ifconfig #{interface} down")
 puts "\n"
 puts "macchanger #{interface} -m #{mac}"
